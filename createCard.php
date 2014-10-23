@@ -2,7 +2,7 @@
 //require('common.php');
 require('phpqrcode/qrlib.php');
 
-$template_image = 'images/MADCRED2.png';
+$template_image = 'images/MADCREDT.png';
 $im = ImageCreateFromPng($template_image);
 $black = imagecolorallocate($im, 0, 0, 0);
 $madRed = imagecolorallocate($im, 237, 24, 73);
@@ -57,10 +57,10 @@ $idSixLength = appendZeros($idNumber,$length);
 ImageTtfText($im, 13, 0, 15, 343, $black, "fonts/BebasNeue-webfont.ttf", $_POST['Post']);
 ImageTtfText($im, 15, 0, 48, 382, $black, "fonts/univers.ttf",$phoneNumberAppended ); 
 ImageTtfText($im, 15, 0, 48, 410, $black, "fonts/univers.ttf", $_POST['Email']);
-ImageTtfText($im, 16, 0, 626.5, 153, $madRed, "fonts/BebasNeue-webfont.ttf", "MAD ID : ");
-ImageTtfText($im, 16, 0, 679, 153, $madRed, "fonts/BebasNeue-webfont.ttf", $idSixLength);
+ImageTtfText($im, 13, 0, 637, 324, $madRed, "fonts/BebasNeue-webfont.ttf", "MAD ID : ");
+ImageTtfText($im, 13, 0, 682, 324, $madRed, "fonts/BebasNeue-webfont.ttf", $idSixLength);
 ImageTtfText($im, 15, 0, 48, 432, $black, "fonts/univers.ttf", $link); 
-imagecopyresampled($im, $qrcode, 626.5, 25, 0, 0, 100, 100, 100, 100);
+imagecopyresampled($im, $qrcode, 637, 336, 0, 0, 90, 90, 100, 100);
 
 /*
 	Parameters
